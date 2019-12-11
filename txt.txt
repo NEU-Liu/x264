@@ -1,0 +1,21 @@
+x264 Linux安装教程
+简介：
+x264官网：https://www.videolan.org/developers/x264.html
+第一种方式：
+git clone https://code.videolan.org/videolan/x264.git
+1.切换至源代码目录 cd x264
+2.输入"./configure --enable-shared --enable-static --disable-asm "
+3.输入"make"
+4.输入"make install"安装（可选）
+5.运行demo
+gcc example.c -lx264
+第二种方式，只编译，不安装：
+git clone https://code.videolan.org/videolan/x264.git
+1.切换至源代码目录 cd x264
+2.输入"./configure --disenable-shared --enable-static --disable-asm  --disable-opencl "
+3.输入"make"
+4.运行demo
+gcc example.c -L. -lx264 -lm -lpthread
+(注意：此时example.c所在的文件夹，需要包含，libx264.a、x264.h、 x264_config.h，此外把example.c，#include<x264.h>,改为#include"x264.h")
+
+
