@@ -1,0 +1,8 @@
+播放yuv:
+ffplay  -s 640x360  -pix_fmt yuv420p demo_640x360_yuv420p.yuv 
+编码YUV to H264:
+gcc newexample.c -L. -lx264 -lm -lpthread
+./a.out
+播放h264:
+ffplay out.h264
+
